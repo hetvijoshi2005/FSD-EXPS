@@ -1,0 +1,4 @@
+1)Ek naya folder banao (e.g., Q4b_AJAXFeedback) aur VS Code me open karo.
+2)Us folder me do files banao: index.html aur style.css.
+3)Neeche diye gaye codes ko unme paste kardo.
+4)index.html ko apne browser me open kar lo (Live Server ya double-click karke).
