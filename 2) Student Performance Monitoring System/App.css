@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+}
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.login {
+    max-width: 400px;
+    text-align: center;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.logout-btn { background-color: #dc3545; width: auto; }
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+.search-bar { border-radius: 20px; background-color: #f8f9fa; }
+
+/* Responsive Layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+@media (max-width: 768px) {
+    .main-content { grid-template-columns: 1fr; }
+}
+
+.form-section {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+.student-card {
+    background: white;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-left: 5px solid #4CAF50;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.student-card h4 { margin: 0 0 10px 0; color: #333; }
+.student-card p { margin: 5px 0; color: #555; }
