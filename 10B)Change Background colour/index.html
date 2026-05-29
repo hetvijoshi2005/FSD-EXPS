@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Color & Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h2>Magic Color Switcher</h2>
+        <p>Click the button to change the background dynamically.</p>
+        
+        <button id="changeBtn">Change Color 🎨</button>
+        
+        <div id="messageBox"></div>
+    </div>
+
+    <script>
+        // Array of attractive colors
+        const colors = ['#ff7675', '#74b9ff', '#55efc4', '#ffeaa7', '#a29bfe', '#fdcb6e'];
+        
+        const btn = document.getElementById('changeBtn');
+        const messageBox = document.getElementById('messageBox');
+
+        btn.addEventListener('click', function() {
+            // 1. Pick a random color
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            // 2. Change Background Color (DOM Manipulation)
+            document.body.style.backgroundColor = randomColor;
+
+            // 3. Clear the previous message
+            messageBox.innerHTML = '';
+
+            // 4. Create and display confirmation message (DOM Manipulation)
+            const confirmationMsg = document.createElement('p');
+            confirmationMsg.innerText = `Success! Background changed to ${randomColor}`;
+            confirmationMsg.classList.add('animated-message'); // Adding CSS class for animation
+            
+            // Inject into the page
+            messageBox.appendChild(confirmationMsg);
+        });
+    </script>
+</body>
+</html>

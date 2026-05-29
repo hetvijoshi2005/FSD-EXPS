@@ -1,0 +1,76 @@
+/* --- Background Animation Setup --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d3436; /* Initial Dark Theme */
+    
+    /* ANIMATION 1: Smooth transition when JS changes the background color */
+    transition: background-color 0.8s ease-in-out; 
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+}
+
+h2 {
+    color: #2d3436;
+    margin-top: 0;
+}
+
+button {
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    background-color: #74b9ff;
+}
+
+button:active {
+    transform: scale(0.95); /* Button click effect */
+}
+
+#messageBox {
+    margin-top: 20px;
+    min-height: 30px; /* Keeps space reserved so layout doesn't jump */
+}
+
+/* --- ANIMATION 2: Message Pop-up --- */
+.animated-message {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 0;
+    
+    /* Applies the keyframe animation defined below */
+    animation: slideUpFade 0.5s ease-out forwards;
+}
+
+/* Keyframes for sliding up and fading in */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
