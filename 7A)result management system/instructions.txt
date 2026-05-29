@@ -1,0 +1,8 @@
+1)Ek naya folder banao (e.g., Q7a_ResultSystem) aur VS Code me open karo.
+2)Terminal: npm create vite@latest frontend -- --template react
+3)Us folder ke andar jao: cd frontend
+4)Dependencies install karo: npm install
+5)Neeche diye gaye codes ko update karo:
+-src/App.css
+-src/App.jsx
+6)Terminal: npm run dev
