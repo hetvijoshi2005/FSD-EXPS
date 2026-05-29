@@ -1,0 +1,4 @@
+1)Ek naya folder banao (e.g., Q5b_NewsArticle) aur VS Code me open karo.
+2)Usme do files banao: index.html aur style.css.
+3)Neeche diye gaye codes ko paste karo.
+4)File ko save karke browser me open kar lo!
