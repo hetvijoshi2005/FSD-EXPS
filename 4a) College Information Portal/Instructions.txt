@@ -1,0 +1,5 @@
+1)Ek naya folder banao (e.g., Q4a_CollegePortal) aur VS Code me open karo.
+2)Us folder me ek nayi file banao aur naam do: index.html
+3)Ek aur nayi file banao aur naam do: style.css
+4)Neeche diye gaye codes ko in dono files me paste kardo.
+5)index.html file par right-click karke "Open with Live Server" (agar VS Code extension hai) click karo, ya phir direct us file ko apne normal folder/File Explorer se double-click karke Chrome me open kar lo.
