@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Session Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="counter-container">
+        <h2>Live Session Dashboard</h2>
+        
+        <div class="count-display">
+            Active Logged-in Users: <br>
+            <span id="userCount" class="badge">0</span>
+        </div>
+
+        <div class="action-buttons">
+            <button onclick="loginUser()" class="btn login-btn">Simulate Login</button>
+            <button onclick="logoutUser()" class="btn logout-btn">Simulate Logout</button>
+        </div>
+        
+        <p class="note">*This uses JavaScript localStorage to simulate session counting.</p>
+    </div>
+
+    <script>
+        // Check if there is already a count in localStorage, otherwise start at 0
+        let activeUsers = parseInt(localStorage.getItem('sessionUserCount')) || 0;
+        const countDisplay = document.getElementById('userCount');
+
+        // Function to update the number on the screen
+        function updateDisplay() {
+            countDisplay.innerText = activeUsers;
+        }
+
+        // Logic for Login
+        function loginUser() {
+            activeUsers++; // Increment count
+            localStorage.setItem('sessionUserCount', activeUsers); // Save to browser
+            updateDisplay();
+        }
+
+        // Logic for Logout
+        function logoutUser() {
+            if (activeUsers > 0) {
+                activeUsers--; // Decrement count (prevent going below 0)
+                localStorage.setItem('sessionUserCount', activeUsers);
+                updateDisplay();
+            } else {
+                alert("No users are currently logged in!");
+            }
+        }
+
+        // Run this once when the page loads to show the correct saved number
+        updateDisplay();
+    </script>
+</body>
+</html>
