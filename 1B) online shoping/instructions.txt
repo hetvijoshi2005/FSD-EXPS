@@ -1,1 +1,11 @@
-aa
+1)Ek naya folder banao (e.g., Q1b_ShoppingSystem) aur VS Code me open karo.
+2)Terminal 1: m2kdir backend, cd backend, npm init -y
+3)New Terminal (Terminal 2): npm create vite@latest frontend -- --template react
+4)Backend directory me ek file banao: server.js
+5)Terminal 1 (Backend): npm install express mongodb cors
+6)Neeche diye gaye codes ko update karo:
+-backend/server.js
+-frontend/src/App.css
+-frontend/src/App.jsx
+7)Terminal 1 (Backend): node server.js
+8)Terminal 2 (Frontend): cd frontend, npm install, aur npm run dev
