@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Engineering Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Computer Engineering Department</h1>
+            <img src="https://via.placeholder.com/800x250?text=Welcome+to+the+Campus" alt="College Campus" class="banner-img">
+        </header>
+
+        <section class="info-section">
+            <h2>Semester 5 Information</h2>
+            
+            <h3>Key Academic Areas:</h3>
+            <ul>
+                <li>Core Theoretical Subjects</li>
+                <li>Practical Laboratory Sessions</li>
+                <li>Project & Research Work</li>
+            </ul>
+
+            <h3>Current Syllabus Overview</h3>
+            <table>
+                <tr>
+                    <th>Subject Code</th>
+                    <th>Subject Name</th>
+                    <th>Credits</th>
+                </tr>
+                <tr>
+                    <td>CS501</td>
+                    <td>Compiler Design</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>CS502</td>
+                    <td>Cryptography</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>CS503</td>
+                    <td>Data Warehousing and Mining (DWM)</td>
+                    <td>3</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="form-section">
+            <h2>IMFS / Study Abroad Inquiry</h2>
+            <p>Fill out this form if you are planning for higher studies and need mentorship.</p>
+            
+            <form action="#" method="POST">
+                <label for="studentName">Full Name:</label>
+                <input type="text" id="studentName" name="studentName" required>
+
+                <label for="email">College Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="query">Mentorship Required For:</label>
+                <select id="query" name="query">
+                    <option value="masters">Master's in Data Science</option>
+                    <option value="other">Other Programs</option>
+                </select>
+
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
