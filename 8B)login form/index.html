@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Login Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Welcome Back</h2>
+        <p class="subtitle">Please enter your details (admin / 1234)</p>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username">
+                <div class="error-msg" id="userError">Username is required</div>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password">
+                <div class="error-msg" id="passError">Password is required</div>
+            </div>
+
+            <div class="error-msg main-error" id="mainError">Invalid credentials!</div>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const mainError = document.getElementById('mainError');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop page reload
+
+            // Reset previous errors
+            usernameInput.classList.remove('error', 'shake');
+            passwordInput.classList.remove('error', 'shake');
+            mainError.style.display = 'none';
+
+            const user = usernameInput.value.trim();
+            const pass = passwordInput.value.trim();
+            let hasError = false;
+
+            // Validation Effects for Incorrect/Empty Entries
+            if (user === '') {
+                usernameInput.classList.add('error', 'shake');
+                hasError = true;
+            }
+            if (pass === '') {
+                passwordInput.classList.add('error', 'shake');
+                hasError = true;
+            }
+
+            // Dummy Authentication Check
+            if (!hasError) {
+                if (user !== 'admin' || pass !== '1234') {
+                    usernameInput.classList.add('error', 'shake');
+                    passwordInput.classList.add('error', 'shake');
+                    mainError.style.display = 'block';
+                    
+                    // Remove shake class after animation completes so it can shake again next time
+                    setTimeout(() => {
+                        usernameInput.classList.remove('shake');
+                        passwordInput.classList.remove('shake');
+                    }, 500);
+                } else {
+                    alert("Login Successful!");
+                    usernameInput.value = '';
+                    passwordInput.value = '';
+                }
+            } else {
+                setTimeout(() => {
+                    usernameInput.classList.remove('shake');
+                    passwordInput.classList.remove('shake');
+                }, 500);
+            }
+        });
+
+        // Remove error styling when user starts typing again
+        usernameInput.addEventListener('input', () => usernameInput.classList.remove('error'));
+        passwordInput.addEventListener('input', () => passwordInput.classList.remove('error'));
+    </script>
+</body>
+</html>

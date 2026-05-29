@@ -1,0 +1,107 @@
+/* --- Centered Layout --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center; /* Horizontally centered */
+    align-items: center;     /* Vertically centered */
+    height: 100vh;
+}
+
+.login-container {
+    background-color: white;
+    padding: 40px;
+    width: 320px;
+    /* Rounded Corners */
+    border-radius: 15px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* --- Colored Input Fields & Rounded Corners --- */
+input {
+    width: 100%;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    border: 2px solid transparent; /* Transparent default border */
+    background-color: #f0f4f8; /* Soft colored background */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+/* --- Validation Effects (CSS added by JS) --- */
+.error-msg {
+    color: #dc3545;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 5px;
+    display: none;
+}
+
+.main-error {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* When input has an error */
+input.error {
+    border-color: #dc3545;
+    background-color: #ffe6e6; /* Changes color to indicate error */
+    color: #dc3545;
+}
+
+/* Shake Animation for incorrect entry */
+.shake {
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
