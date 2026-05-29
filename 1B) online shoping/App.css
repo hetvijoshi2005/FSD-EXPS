@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #89b3de;
+    margin: 0;
+}
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: rgb(251, 246, 246);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.login-box {
+    max-width: 350px;
+    text-align: center;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #f6eeee;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.search-bar { border-radius: 20px; padding: 12px 20px; }
+button {
+    background-color: #007bff;
+    color: rgb(23, 23, 23);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cart-btn { background-color: #ff9800; margin-left: 10px; }
+.checkout-btn { background-color: #28a745; width: 100%; font-size: 16px; padding: 12px; }
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.card {
+    border: 1px solid #161515;
+    padding: 15px;
+    border-radius: 8px;
+    width: calc(50% - 20px);
+    box-sizing: border-box;
+    text-align: center;
+}
