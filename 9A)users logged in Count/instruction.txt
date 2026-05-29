@@ -1,0 +1,4 @@
+1)Ek naya folder banao (e.g., Q9a_UserCounter) aur VS Code me open karo.
+2)Us folder me do files banao: index.html aur style.css.
+3)Neeche diye gaye codes ko un files me paste kardo.
+4)index.html ko save karo aur browser me open kar lo. (Login aur Logout buttons click karke dekhna, aur page refresh karke bhi dekhna ki count maintain rehta hai ya nahi).
