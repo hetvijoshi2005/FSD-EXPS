@@ -1,0 +1,4 @@
+Ek naya folder banao (e.g., Q5a_BootstrapImages) aur VS Code me open karo.
+Us folder me sirf ek file banao: index.html.
+Neeche diye gaye code ko usme paste kardo.
+File ko save karo aur apne browser me open kar lo. (Tum dekhogi ki desktop pe ye 3 images side-by-side aayengi, aur mobile view me automatically ek ke neeche ek aayengi, yahi Bootstrap ka magic hai!)
