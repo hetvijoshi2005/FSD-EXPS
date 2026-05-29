@@ -1,0 +1,42 @@
+/* Basic page setup */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2c3e50;
+    height: 100vh;
+    display: flex;
+    align-items: center; /* Centers the box vertically */
+    overflow-x: hidden; /* Prevents a horizontal scrollbar when the box moves */
+}
+
+/* Styling the Box */
+.animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: #e74c3c; /* Red colored box */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    
+    /* ANIMATION PROPERTY EXPLAINED:
+       - name: moveRight (matches the @keyframes name below)
+       - duration: 4s (takes 4 seconds to complete one move)
+       - timing: linear (moves at a constant speed)
+       - iteration: infinite (loops forever)
+       - direction: alternate (goes left-to-right, then right-to-left smoothly)
+    */
+    animation: moveRight 4s linear infinite alternate;
+}
+
+/* Defining the Animation steps */
+@keyframes moveRight {
+    0% {
+        /* Starts at its original position (left side) */
+        transform: translateX(0);
+    }
+    100% {
+        /* Moves to the right side of the screen. 
+           calc(100vw - 100px) ensures it stops exactly at the right edge 
+           (100% viewport width minus the box's own width) */
+        transform: translateX(calc(100vw - 100px));
+    }
+}
