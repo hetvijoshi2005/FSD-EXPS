@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Feedback System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Student Feedback System</h2>
+        <p>Submit your feedback without page reload (AJAX).</p>
+        
+        <form id="feedbackForm">
+            <input type="text" id="name" placeholder="Enter your Name" required>
+            <textarea id="comment" rows="4" placeholder="Enter your feedback here..." required></textarea>
+            <button type="submit" id="submitBtn">Submit Feedback</button>
+        </form>
+
+        <div id="statusMessage"></div>
+
+        <h3>Recent Feedbacks:</h3>
+        <div id="feedbackList">
+            </div>
+    </div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Page reload hone se rokta hai (Crucial for AJAX)
+
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const statusDiv = document.getElementById('statusMessage');
+            const submitBtn = document.getElementById('submitBtn');
+
+            // UI Update: Show loading state
+            statusDiv.innerHTML = "<span class='loading'>Submitting via AJAX... Please wait.</span>";
+            submitBtn.disabled = true;
+
+            // AJAX Call (Using modern Fetch API)
+            // Using a free dummy API just to show a real network request
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json; charset=UTF-8',
+                },
+                body: JSON.stringify({ title: name, body: comment })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // UI Update: Success
+                statusDiv.innerHTML = "<span class='success'>Feedback submitted successfully!</span>";
+                
+                // Dynamically add the new feedback to the list
+                const feedbackList = document.getElementById('feedbackList');
+                const newFeedback = document.createElement('div');
+                newFeedback.className = 'feedback-card';
+                newFeedback.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+                
+                // Add to the top of the list
+                feedbackList.prepend(newFeedback);
+
+                // Reset form and UI
+                document.getElementById('feedbackForm').reset();
+                submitBtn.disabled = false;
+                
+                // Hide success message after 3 seconds
+                setTimeout(() => { statusDiv.innerHTML = ""; }, 3000);
+            })
+            .catch(error => {
+                statusDiv.innerHTML = "<span class='error'>Error submitting feedback.</span>";
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
